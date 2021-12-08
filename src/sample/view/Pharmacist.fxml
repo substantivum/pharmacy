@@ -1,14 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="sample.controller.PharmacistController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.PharmacistController">
+   <children>
+      <MenuBar layoutY="1.0" prefHeight="26.0" prefWidth="900.0">
+         <menus>
+            <Menu mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Close" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Edit">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Delete" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="About" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <AnchorPane layoutY="27.0" prefHeight="576.0" prefWidth="174.0" style="-fx-background-color: #06908F;">
+         <children>
+            <Label alignment="CENTER" layoutX="28.0" layoutY="35.0" prefHeight="20.0" prefWidth="106.0" text="Аптека" textFill="#f9f8f8">
+               <font>
+                  <Font name="Times New Roman" size="18.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="add_button" layoutX="17.0" layoutY="162.0" text="Добавить медикамент" textFill="#f9f8f8" />
+            <JFXButton fx:id="delete_button" layoutX="16.0" layoutY="307.0" text="Удалить медикамент" textFill="#f9f8f8" />
+            <JFXButton fx:id="order_button" layoutX="16.0" layoutY="363.0" text="Заказать медикаменты" textFill="#f9f8f8" />
+            <JFXButton fx:id="chat_button" layoutX="15.0" layoutY="419.0" prefHeight="27.0" prefWidth="143.0" text="Чат с поставщиком" textAlignment="CENTER" textFill="#f7f7f7" wrapText="true" />
+            <JFXButton fx:id="exit_button" layoutX="55.0" layoutY="476.0" text="Выход" textFill="#fcfbfb" />
+            <JFXButton fx:id="edit_button" layoutX="11.0" layoutY="220.0" prefHeight="67.0" prefWidth="150.0" text="Редактировать информацию о медикаменте" textAlignment="CENTER" textFill="#f7f7f7" wrapText="true" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="174.0" layoutY="27.0" prefHeight="76.0" prefWidth="733.0">
+         <children>
+            <TextField fx:id="search_field" layoutX="483.0" layoutY="11.0" prefHeight="26.0" prefWidth="205.0" promptText="введите слово для поиска" />
+            <JFXButton fx:id="reload" layoutX="340.0" layoutY="10.0" style="-fx-border-color: black;" text="Обновить список">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="12.0" opacity="0.52" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../templates/reload.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <Label fx:id="employee_text" layoutX="14.0" layoutY="16.0" text="Список медикаментов">
+               <font>
+                  <Font name="Times New Roman" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="174.0" layoutY="86.0" prefHeight="514.0" prefWidth="726.0">
+         <children>
+            <ScrollPane prefHeight="520.0" prefWidth="726.0">
+               <content>
+                  <TableView fx:id="medicineTable" prefHeight="619.0" prefWidth="726.0">
+                    <columns>
+                      <TableColumn fx:id="id_col" prefWidth="75.0" text="ID" />
+                      <TableColumn fx:id="name_col" prefWidth="137.5999755859375" text="Название" />
+                        <TableColumn fx:id="active_col" prefWidth="150.40000915527344" text="Активные вещества" />
+                        <TableColumn fx:id="amount_col" prefWidth="88.80010986328125" text="Количество" />
+                        <TableColumn fx:id="symptop_col" prefWidth="128.800048828125" text="Симптомы" />
+                        <TableColumn fx:id="cost_col" prefWidth="148.7999267578125" text="Цена" />
+                    </columns>
+                  </TableView>
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+   </children>
 </AnchorPane>

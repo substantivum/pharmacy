@@ -130,11 +130,11 @@ public class Controller implements Initializable {
             }
             System.out.println(a);
 
-            if(a == 1) {
+            if(a == 2) {
                 changeScene("/sample/view/Supplier.fxml", in_button);
                 in_button.getScene().getWindow().hide();
             }
-            else if(a == 2){
+            else if(a == 1){
                 changeScene("/sample/view/Pharmacist.fxml", in_button);
                 in_button.getScene().getWindow().hide();
             }
