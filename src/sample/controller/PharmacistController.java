@@ -14,7 +14,6 @@ import sample.models.MedicineTable;
 import javafx.fxml.Initializable;
 
 import java.net.URL;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;

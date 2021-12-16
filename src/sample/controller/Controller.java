@@ -1,8 +1,8 @@
 package sample.controller;
 
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXPasswordField;
-import com.jfoenix.controls.JFXTextField;
+import javafx.scene.control.TextField;
+import javafx.scene.control.PasswordField;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -12,7 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 
 import java.io.IOException;
@@ -47,31 +47,31 @@ public class Controller implements Initializable {
     private Pane signUpPane;
 
     @FXML
-    private JFXTextField signIn_login;
+    private TextField signIn_login;
 
     @FXML
-    private JFXPasswordField signIn_pass;
+    private PasswordField signIn_pass;
 
     @FXML
     private JFXButton in_button;
 
     @FXML
-    private JFXTextField fname;
+    private TextField fname;
 
     @FXML
-    private JFXTextField lname;
+    private TextField lname;
 
     @FXML
-    private JFXTextField company;
+    private TextField company;
 
     @FXML
-    private JFXTextField new_username;
+    private TextField new_username;
 
     @FXML
-    private JFXTextField new_password;
+    private TextField new_password;
 
     @FXML
-    private JFXTextField reap_pass;
+    private TextField reap_pass;
 
     @FXML
     private JFXButton signUp_button;
@@ -81,12 +81,12 @@ public class Controller implements Initializable {
         signUpPane.setVisible(false);
     }
 
-    public void OpenSignUp(Event event) {
+    public void OpenSignUp(MouseEvent event) {
         signInPane.setVisible(false);
         signUpPane.setVisible(true);
     }
 
-    public void openSignIn(Event event) {
+    public void openSignIn(MouseEvent event) {
         signUpPane.setVisible(false);
         signInPane.setVisible(true);
     }
@@ -182,4 +182,5 @@ public class Controller implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         start();
     }
+
 }
